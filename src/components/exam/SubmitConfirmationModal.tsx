@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
-import { test } from '../../data/test'
+import type { TestDefinition } from '../../data/test'
 import type { Attempt } from '../../types/exam'
 import { clock, summary } from '../../utils/exam'
 
-export function SubmitConfirmationModal({ attempt, seconds, close, confirm }: { attempt: Attempt; seconds: number; close: () => void; confirm: () => void }) {
+export function SubmitConfirmationModal({ test, attempt, seconds, close, confirm }: { test: TestDefinition; attempt: Attempt; seconds: number; close: () => void; confirm: () => void }) {
   const dialog = useRef<HTMLDialogElement>(null)
   useEffect(() => {
     const element = dialog.current

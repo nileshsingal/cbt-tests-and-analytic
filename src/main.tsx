@@ -15,7 +15,7 @@ function DashboardSection() {
 }
 createRoot(document.getElementById('root')!).render(<StrictMode><BrowserRouter><Routes>
   <Route path="/" element={<Dashboard />} /><Route path="/dashboard/:section" element={<DashboardSection />} />
-  <Route path="/instructions" element={<Instructions />} /><Route path="/exam/:id" element={<Exam />} />
+  <Route path="/instructions/:testId?" element={<Instructions />} /><Route path="/exam/:id" element={<Exam />} />
   <Route path="/result/:id" element={<Results />} /><Route path="/solutions/:id" element={<Results key="solutions" solutions />} />
   <Route path="*" element={<Navigate to="/" replace />} />
 </Routes></BrowserRouter></StrictMode>)

@@ -9,7 +9,9 @@ export interface Question {
   difficulty: string
   questionText: string
   options: { id: string; text: string }[]
-  correctOptionId: string
+  correctOptionId: string | null
+  table?: { headings: string[]; rows: string[][] }
+  figure?: { src: string; alt: string }
   explanation: string
   positiveMarks: number
   negativeMarks: number

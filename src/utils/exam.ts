@@ -1,5 +1,6 @@
-import type { Attempt, Question, QuestionStatus, Response } from '../types/exam'
-import { test } from '../data/test'
+import type { Attempt, QuestionStatus, Response } from '../types/exam'
+import { getTest } from '../data/test'
+import type { TestDefinition } from '../data/test'
 
 export const statuses: Record<QuestionStatus, string> = {
   unvisited: 'Not Visited', unanswered: 'Not Answered', answered: 'Answered',
@@ -12,10 +13,10 @@ export function status(response?: Response): QuestionStatus {
 }
 export function summary(attempt: Attempt) {
   const counts = { unvisited: 0, unanswered: 0, answered: 0, review: 0, answeredReview: 0 }
-  for (const id of test.questionIds) counts[status(attempt.responses[id])]++
+  for (const id of getTest(attempt.testId)?.questionIds ?? []) counts[status(attempt.responses[id])]++
   return counts
 }
-export function createAttempt(now = Date.now()): Attempt {
+export function createAttempt(test: TestDefinition, now = Date.now()): Attempt {
   return { id: crypto.randomUUID(), testId: test.id, startedAt: now,
     deadline: now + test.durationSeconds * 1000, current: 0,
     responses: { [test.questionIds[0]]: { visited: true } } }
@@ -36,6 +37,8 @@ export function transition(attempt: Attempt, action: Action, now = Date.now()): 
   if (now >= attempt.deadline || action.type === 'submit') {
     return { ...attempt, submittedAt: Math.min(now, attempt.deadline) }
   }
+  const test = getTest(attempt.testId)
+  if (!test) return attempt
   const id = test.questionIds[attempt.current]
   const response = attempt.responses[id]
   const responses = { ...attempt.responses }
@@ -60,21 +63,23 @@ export function transition(attempt: Attempt, action: Action, now = Date.now()): 
   responses[destination] = { ...responses[destination], visited: true }
   return { ...attempt, current, responses }
 }
-export function evaluate(attempt: Attempt, questions: Question[]) {
-  const items = questions.map((question, index) => {
+export function evaluate(attempt: Attempt, test: TestDefinition) {
+  const items = test.questions.map((question, index) => {
     const response = attempt.responses[question.id]
     const selected = response?.saved
-    const outcome = !selected ? 'unattempted' : selected === question.correctOptionId ? 'correct' : 'incorrect'
+    const outcome = question.correctOptionId === null ? 'cancelled'
+      : !selected ? 'unattempted' : selected === question.correctOptionId ? 'correct' : 'incorrect'
     const marks = outcome === 'correct' ? question.positiveMarks : outcome === 'incorrect' ? -question.negativeMarks : 0
     return { question, index, selected, outcome, marks, review: !!response?.review }
   })
   const correct = items.filter(item => item.outcome === 'correct').length
   const incorrect = items.filter(item => item.outcome === 'incorrect').length
-  const maximum = questions.reduce((total, question) => total + question.positiveMarks, 0)
+  const cancelled = items.filter(item => item.outcome === 'cancelled').length
+  const maximum = test.scorableMarks
   const score = items.reduce((total, item) => total + item.marks, 0)
   return {
     items, correct, incorrect, score, maximum,
-    unattempted: items.length - correct - incorrect,
+    cancelled, unattempted: items.length - correct - incorrect - cancelled,
     accuracy: correct + incorrect ? 100 * correct / (correct + incorrect) : 0,
     percentage: maximum ? 100 * score / maximum : 0,
     deducted: items.reduce((total, item) => total + Math.max(0, -item.marks), 0),
