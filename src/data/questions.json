@@ -1,0 +1,182 @@
+[
+  {
+    "id": "demo-1",
+    "examType": "MPSC Rajyaseva Prelims",
+    "examYear": null,
+    "paper": "General Studies Paper I",
+    "subject": "Indian Polity",
+    "topic": "Fundamental Rights",
+    "subtopic": "Untouchability",
+    "difficulty": "Easy",
+    "questionText": "Which Article of the Indian Constitution abolishes untouchability?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Article 14"
+      },
+      {
+        "id": "B",
+        "text": "Article 15"
+      },
+      {
+        "id": "C",
+        "text": "Article 17"
+      },
+      {
+        "id": "D",
+        "text": "Article 19"
+      }
+    ],
+    "correctOptionId": "C",
+    "explanation": "Article 17 abolishes untouchability and forbids its practice in any form.",
+    "positiveMarks": 2,
+    "negativeMarks": 0.5,
+    "source": "Demonstration question bank",
+    "isPYQ": false,
+    "language": "en"
+  },
+  {
+    "id": "demo-2",
+    "examType": "MPSC Rajyaseva Prelims",
+    "examYear": null,
+    "paper": "General Studies Paper I",
+    "subject": "Modern Indian History",
+    "topic": "Social reform movements",
+    "subtopic": "Brahmo Samaj",
+    "difficulty": "Easy",
+    "questionText": "Who founded the Brahmo Samaj in 1828?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Swami Vivekananda"
+      },
+      {
+        "id": "B",
+        "text": "Raja Ram Mohan Roy"
+      },
+      {
+        "id": "C",
+        "text": "Dayanand Saraswati"
+      },
+      {
+        "id": "D",
+        "text": "Ishwar Chandra Vidyasagar"
+      }
+    ],
+    "correctOptionId": "B",
+    "explanation": "Raja Ram Mohan Roy founded the Brahmo Samaj in 1828 to promote religious and social reforms.",
+    "positiveMarks": 2,
+    "negativeMarks": 0.5,
+    "source": "Demonstration question bank",
+    "isPYQ": false,
+    "language": "en"
+  },
+  {
+    "id": "demo-3",
+    "examType": "MPSC Rajyaseva Prelims",
+    "examYear": null,
+    "paper": "General Studies Paper I",
+    "subject": "Maharashtra History",
+    "topic": "State formation",
+    "subtopic": "Bombay State reorganisation",
+    "difficulty": "Easy",
+    "questionText": "In which year was Maharashtra formed as a separate state?",
+    "options": [
+      {
+        "id": "A",
+        "text": "1956"
+      },
+      {
+        "id": "B",
+        "text": "1958"
+      },
+      {
+        "id": "C",
+        "text": "1960"
+      },
+      {
+        "id": "D",
+        "text": "1962"
+      }
+    ],
+    "correctOptionId": "C",
+    "explanation": "Maharashtra was formed on 1 May 1960 following the reorganisation of Bombay State.",
+    "positiveMarks": 2,
+    "negativeMarks": 0.5,
+    "source": "Demonstration question bank",
+    "isPYQ": false,
+    "language": "en"
+  },
+  {
+    "id": "demo-4",
+    "examType": "MPSC Rajyaseva Prelims",
+    "examYear": null,
+    "paper": "General Studies Paper I",
+    "subject": "Geography",
+    "topic": "Physical geography",
+    "subtopic": "Peaks of Maharashtra",
+    "difficulty": "Easy",
+    "questionText": "Which is the highest mountain peak in Maharashtra?",
+    "options": [
+      {
+        "id": "A",
+        "text": "Kalsubai"
+      },
+      {
+        "id": "B",
+        "text": "Mahabaleshwar"
+      },
+      {
+        "id": "C",
+        "text": "Harishchandragad"
+      },
+      {
+        "id": "D",
+        "text": "Salher"
+      }
+    ],
+    "correctOptionId": "A",
+    "explanation": "Kalsubai is the highest peak in Maharashtra, with an elevation of approximately 1,646 metres.",
+    "positiveMarks": 2,
+    "negativeMarks": 0.5,
+    "source": "Demonstration question bank",
+    "isPYQ": false,
+    "language": "en"
+  },
+  {
+    "id": "demo-5",
+    "examType": "MPSC Rajyaseva Prelims",
+    "examYear": null,
+    "paper": "General Studies Paper I",
+    "subject": "Indian Economy",
+    "topic": "Banking",
+    "subtopic": "Reserve Bank of India",
+    "difficulty": "Easy",
+    "questionText": "In which year was the Reserve Bank of India established?",
+    "options": [
+      {
+        "id": "A",
+        "text": "1930"
+      },
+      {
+        "id": "B",
+        "text": "1935"
+      },
+      {
+        "id": "C",
+        "text": "1947"
+      },
+      {
+        "id": "D",
+        "text": "1950"
+      }
+    ],
+    "correctOptionId": "B",
+    "explanation": "The Reserve Bank of India commenced operations on 1 April 1935.",
+    "positiveMarks": 2,
+    "negativeMarks": 0.5,
+    "source": "Demonstration question bank",
+    "isPYQ": false,
+    "language": "en"
+  }
+]
