@@ -1,4 +1,4 @@
-# MPSC Test Series
+# CBT Based Test Platform
 
 Practice. Analyse. Improve.
 
