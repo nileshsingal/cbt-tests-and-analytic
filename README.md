@@ -15,7 +15,7 @@ Open the local URL printed by Vite. Use `npm run lint`, `npm test` and `npm run 
 
 ## Exam workflow
 
-Start the MPSC Rajyaseva Prelims demo from Available Tests and accept the instructions. Select answers and use Save & Next or Mark for Review & Next to record them. Draft changes survive refresh and navigation. Scoring uses the last saved answer, including saved answers flagged for review. Clear Response removes both the draft and saved answer and preserves the review flag. Save & Next clears the review flag. The absolute deadline persists across page reloads. Open a completed attempt from Test History to see its score and detailed solutions.
+Start the Test demo from Available Tests and accept the instructions. Select answers and use Save & Next or Mark for Review & Next to record them. Draft changes survive refresh and navigation. Scoring uses the last saved answer, including saved answers flagged for review. Clear Response removes both the draft and saved answer and preserves the review flag. Save & Next clears the review flag. The absolute deadline persists across page reloads. Open a completed attempt from Test History to see its score and detailed solutions.
 
 ## Architecture
 
